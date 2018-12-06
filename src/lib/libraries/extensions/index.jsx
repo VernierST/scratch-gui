@@ -69,25 +69,6 @@ export default [
     {
         name: (
             <FormattedMessage
-                defaultMessage="New Thing"
-                description="Name for the 'New Thing' extension"
-                id="gui.extension.newthing.name"
-            />
-        ),
-        extensionId: 'newThing',
-        iconURL: penImage,
-        description: (
-            <FormattedMessage
-                defaultMessage="Do something new!."
-                description="Description for the 'New Thing' extension"
-                id="gui.extension.newthing.description"
-            />
-        ),
-        featured: true
-    },
-    {
-        name: (
-            <FormattedMessage
                 defaultMessage="Video Sensing"
                 description="Name for the 'Video Sensing' extension"
                 id="gui.extension.videosensing.name"
@@ -254,7 +235,13 @@ export default [
 
     },
     {
-        name: 'Go! Force',
+        name: (
+            <FormattedMessage
+                defaultMessage="Go! Force"
+                description="Name for the 'Go! Force' extension"
+                id="gui.extension.goforce.name"
+            />
+        ),
         extensionId: 'goforce',
         collaborator: 'Vernier',
         iconURL: microbitImage,
