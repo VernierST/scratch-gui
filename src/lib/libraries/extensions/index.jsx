@@ -233,5 +233,34 @@ export default [
         ),
         helpLink: 'https://scratch.mit.edu/wedo'
 
+    },
+    {
+        name: 'Go! Force',
+        extensionId: 'goforce',
+        collaborator: 'Vernier',
+        iconURL: microbitImage,
+        insetIconURL: microbitMenuImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="Connect your projects with the world."
+                description="Description for the 'Go! Force' extension"
+                id="gui.extension.goforce.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: true,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        peripheralImage: microbitPeripheralImage,
+        smallPeripheralImage: microbitMenuImage,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Message to help people connect to their micro:bit."
+                id="gui.extension.goforce.connectingMessage"
+            />
+        ),
+        helpLink: 'https://scratch.mit.edu/microbit'
     }
 ];
