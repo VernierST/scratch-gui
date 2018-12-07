@@ -30,7 +30,7 @@
     "react-dom": "^16.0.0"
   },
   "dependencies": {
-    "scratch-vm": "github:VernierST/scratch-vm#goforce",
+    "scratch-vm": "github:VernierST/scratch-vm#goforce"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
