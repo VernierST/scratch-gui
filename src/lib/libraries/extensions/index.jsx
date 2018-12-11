@@ -237,20 +237,20 @@ export default [
     {
         name: (
             <FormattedMessage
-                defaultMessage="Go! Force"
-                description="Name for the 'Go! Force' extension"
-                id="gui.extension.goforce.name"
+                defaultMessage="GDX-FOR"
+                description="Name for the 'GDX-FOR' extension"
+                id="gui.extension.gdxfor.name"
             />
         ),
-        extensionId: 'goforce',
+        extensionId: 'gdxfor',
         collaborator: 'Vernier',
         iconURL: microbitImage,
         insetIconURL: microbitMenuImage,
         description: (
             <FormattedMessage
                 defaultMessage="Connect your projects with the world."
-                description="Description for the 'Go! Force' extension"
-                id="gui.extension.goforce.description"
+                description="Description for the 'GDX-FOR' extension"
+                id="gui.extension.gdxfor.description"
             />
         ),
         featured: true,
@@ -264,7 +264,7 @@ export default [
             <FormattedMessage
                 defaultMessage="Connecting"
                 description="Message to help people connect to their micro:bit."
-                id="gui.extension.goforce.connectingMessage"
+                id="gui.extension.gdxfor.connectingMessage"
             />
         ),
         helpLink: 'https://scratch.mit.edu/microbit'
