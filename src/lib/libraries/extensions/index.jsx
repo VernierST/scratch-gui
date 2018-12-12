@@ -235,13 +235,7 @@ export default [
 
     },
     {
-        name: (
-            <FormattedMessage
-                defaultMessage="GDX-FOR"
-                description="Name for the 'GDX-FOR' extension"
-                id="gui.extension.gdxfor.name"
-            />
-        ),
+        name: 'GDX-FOR',
         extensionId: 'gdxfor',
         collaborator: 'Vernier',
         iconURL: microbitImage,
