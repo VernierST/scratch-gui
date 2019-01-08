@@ -136,7 +136,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _containers_gui_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../containers/gui.jsx */ "./src/containers/gui.jsx");
 /* harmony import */ var _lib_hash_parser_hoc_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lib/hash-parser-hoc.jsx */ "./src/lib/hash-parser-hoc.jsx");
 /* harmony import */ var _lib_titled_hoc_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lib/titled-hoc.jsx */ "./src/lib/titled-hoc.jsx");
+/* harmony import */ var _lib_log_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../lib/log.js */ "./src/lib/log.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 
 
 
@@ -148,6 +150,18 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
 var onClickLogo = function onClickLogo() {
   window.location = 'https://scratch.mit.edu';
+};
+
+var handleTelemetryModalCancel = function handleTelemetryModalCancel() {
+  Object(_lib_log_js__WEBPACK_IMPORTED_MODULE_7__["default"])('User canceled telemetry modal');
+};
+
+var handleTelemetryModalOptIn = function handleTelemetryModalOptIn() {
+  Object(_lib_log_js__WEBPACK_IMPORTED_MODULE_7__["default"])('User opted into telemetry');
+};
+
+var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
+  Object(_lib_log_js__WEBPACK_IMPORTED_MODULE_7__["default"])('User opted out of telemetry');
 };
 /*
  * Render the GUI playground. This is a separate function because importing anything
@@ -165,10 +179,31 @@ var onClickLogo = function onClickLogo() {
 
   var backpackHostMatches = window.location.href.match(/[?&]backpack_host=([^&]*)&?/);
   var backpackHost = backpackHostMatches ? backpackHostMatches[1] : null;
+  var scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
+  var simulateScratchDesktop;
+
+  if (scratchDesktopMatches) {
+    try {
+      // parse 'true' into `true`, 'false' into `false`, etc.
+      simulateScratchDesktop = JSON.parse(scratchDesktopMatches[1]);
+    } catch (_unused) {
+      // it's not JSON so just use the string
+      // note that a typo like "falsy" will be treated as true
+      simulateScratchDesktop = scratchDesktopMatches[1];
+    }
+  }
 
   if (false) {}
 
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(WrappedGui, {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( // important: this is checking whether `simulateScratchDesktop` is truthy, not just defined!
+  simulateScratchDesktop ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(WrappedGui, {
+    isScratchDesktop: true,
+    showTelemetryModal: true,
+    canSave: false,
+    onTelemetryModalCancel: handleTelemetryModalCancel,
+    onTelemetryModalOptIn: handleTelemetryModalOptIn,
+    onTelemetryModalOptOut: handleTelemetryModalOptOut
+  }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(WrappedGui, {
     backpackVisible: true,
     showComingSoon: true,
     showPreviewInfo: true,
