@@ -18,6 +18,8 @@ import makeymakeyImage from './makeymakey.png';
 import makeymakeyInsetImage from './makeymakey-small.svg';
 import boostImage from './boost.png';
 import boostInsetImage from './boost-small.svg';
+import gdxforImage from './gdxfor.png';
+import gdxforInsetImage from './gdxfor-small.svg';
 
 import microbitPeripheralImage from './peripheral-connection/microbit/microbit-illustration.svg';
 import microbitMenuImage from './peripheral-connection/microbit/microbit-small.svg';
@@ -255,5 +257,34 @@ export default [
         disabled: true,
         bluetoothRequired: true,
         internetConnectionRequired: true
+    },
+    {
+        name: 'GDX-FOR',
+        extensionId: 'gdxfor',
+        collaborator: 'Vernier',
+        iconURL: gdxforImage,
+        insetIconURL: gdxforInsetImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="Connect your projects with the world."
+                description="Description for the 'GDX-FOR' extension"
+                id="gui.extension.gdxfor.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: true,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        peripheralImage: microbitPeripheralImage,
+        smallPeripheralImage: gdxforInsetImage,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Message to help people connect to their micro:bit."
+                id="gui.extension.gdxfor.connectingMessage"
+            />
+        ),
+        helpLink: 'https://scratch.mit.edu/microbit'
     }
 ];
