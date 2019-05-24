@@ -46,6 +46,11 @@ import gdxforInsetIconURL from './gdxfor/gdxfor-small.svg';
 import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
+import gdxsndIconURL from './gdxsnd/gdxsnd.png';
+import gdxsndInsetIconURL from './gdxsnd/gdxsnd-small.svg';
+import gdxsndConnectionIconURL from './gdxsnd/gdxsnd-illustration.svg';
+import gdxsndConnectionSmallIconURL from './gdxsnd/gdxsnd-small.svg';
+
 export default [
     {
         name: (
@@ -314,6 +319,36 @@ export default [
                 defaultMessage="Connecting"
                 description="Message to help people connect to their force and acceleration sensor."
                 id="gui.extension.gdxfor.connectingMessage"
+            />
+        ),
+        helpLink: 'https://scratch.mit.edu/vernier'
+    },
+    {
+        name: 'Go Direct Sound',
+        extensionId: 'gdxsnd',
+        collaborator: 'Vernier',
+        iconURL: gdxsndIconURL,
+        insetIconURL: gdxsndInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="React to noise levels."
+                description="Description for the Vernier Go Direct Sound sensor extension"
+                id="gui.extension.gdxsnd.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: true,
+        internetConnectionRequired: true,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        connectionIconURL: gdxsndConnectionIconURL,
+        connectionSmallIconURL: gdxsndConnectionSmallIconURL,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Message to help people connect to their sound sensor."
+                id="gui.extension.gdxsnd.connectingMessage"
             />
         ),
         helpLink: 'https://scratch.mit.edu/vernier'
