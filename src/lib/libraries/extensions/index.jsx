@@ -51,6 +51,11 @@ import gdxsndInsetIconURL from './gdxsnd/gdxsnd-small.svg';
 import gdxsndConnectionIconURL from './gdxsnd/gdxsnd-illustration.svg';
 import gdxsndConnectionSmallIconURL from './gdxsnd/gdxsnd-small.svg';
 
+import gdxmdIconURL from './gdxmd/gdxmd.png';
+import gdxmdInsetIconURL from './gdxmd/gdxmd-small.svg';
+import gdxmdConnectionIconURL from './gdxmd/gdxmd-illustration.svg';
+import gdxmdConnectionSmallIconURL from './gdxmd/gdxmd-small.svg';
+
 export default [
     {
         name: (
@@ -349,6 +354,36 @@ export default [
                 defaultMessage="Connecting"
                 description="Message to help people connect to their sound sensor."
                 id="gui.extension.gdxsnd.connectingMessage"
+            />
+        ),
+        helpLink: 'https://scratch.mit.edu/vernier'
+    },
+    {
+        name: 'Go Direct Motion Detector',
+        extensionId: 'gdxmd',
+        collaborator: 'Vernier',
+        iconURL: gdxmdIconURL,
+        insetIconURL: gdxmdInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="React to the distance and speed of objects"
+                description="Description for the Vernier Go Direct Motion Detector sensor extension"
+                id="gui.extension.gdxmd.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: true,
+        internetConnectionRequired: true,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        connectionIconURL: gdxmdConnectionIconURL,
+        connectionSmallIconURL: gdxmdConnectionSmallIconURL,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Message to help people connect to their motion detector."
+                id="gui.extension.gdxmd.connectingMessage"
             />
         ),
         helpLink: 'https://scratch.mit.edu/vernier'
