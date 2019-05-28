@@ -56,6 +56,11 @@ import gdxmdInsetIconURL from './gdxmd/gdxmd-small.svg';
 import gdxmdConnectionIconURL from './gdxmd/gdxmd-illustration.svg';
 import gdxmdConnectionSmallIconURL from './gdxmd/gdxmd-small.svg';
 
+import gdx3mgIconURL from './gdx3mg/gdx3mg.png';
+import gdx3mgInsetIconURL from './gdx3mg/gdx3mg-small.svg';
+import gdx3mgConnectionIconURL from './gdx3mg/gdx3mg-illustration.svg';
+import gdx3mgConnectionSmallIconURL from './gdx3mg/gdx3mg-small.svg';
+
 export default [
     {
         name: (
@@ -384,6 +389,36 @@ export default [
                 defaultMessage="Connecting"
                 description="Message to help people connect to their motion detector."
                 id="gui.extension.gdxmd.connectingMessage"
+            />
+        ),
+        helpLink: 'https://scratch.mit.edu/vernier'
+    },
+    {
+        name: 'Go Direct 3-Axis Magnetic Field',
+        extensionId: 'gdx3mg',
+        collaborator: 'Vernier',
+        iconURL: gdx3mgIconURL,
+        insetIconURL: gdx3mgInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="React to magnetism"
+                description="Description for the Vernier Go Direct 3-Axis Magnetic Field sensor extension"
+                id="gui.extension.gdx3mg.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: true,
+        internetConnectionRequired: true,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        connectionIconURL: gdx3mgConnectionIconURL,
+        connectionSmallIconURL: gdx3mgConnectionSmallIconURL,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Message to help people connect to their magnetic field sensor."
+                id="gui.extension.gdx3mg.connectingMessage"
             />
         ),
         helpLink: 'https://scratch.mit.edu/vernier'
