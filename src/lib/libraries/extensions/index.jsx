@@ -61,6 +61,11 @@ import gdx3mgInsetIconURL from './gdx3mg/gdx3mg-small.svg';
 import gdx3mgConnectionIconURL from './gdx3mg/gdx3mg-illustration.svg';
 import gdx3mgConnectionSmallIconURL from './gdx3mg/gdx3mg-small.svg';
 
+import gdxtmpIconURL from './gdxtmp/gdxtmp.png';
+import gdxtmpInsetIconURL from './gdxtmp/gdxtmp-small.svg';
+import gdxtmpConnectionIconURL from './gdxtmp/gdxtmp-illustration.svg';
+import gdxtmpConnectionSmallIconURL from './gdxtmp/gdxtmp-small.svg';
+
 export default [
     {
         name: (
@@ -419,6 +424,36 @@ export default [
                 defaultMessage="Connecting"
                 description="Message to help people connect to their magnetic field sensor."
                 id="gui.extension.gdx3mg.connectingMessage"
+            />
+        ),
+        helpLink: 'https://scratch.mit.edu/vernier'
+    },
+    {
+        name: 'Go Direct Temperature',
+        extensionId: 'gdxtmp',
+        collaborator: 'Vernier',
+        iconURL: gdxtmpIconURL,
+        insetIconURL: gdxtmpInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="React to temperature"
+                description="Description for the Vernier Go Direct Temperature sensor extension"
+                id="gui.extension.gdxtmp.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: true,
+        internetConnectionRequired: true,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        connectionIconURL: gdxtmpConnectionIconURL,
+        connectionSmallIconURL: gdxtmpConnectionSmallIconURL,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Message to help people connect to their temperature sensor."
+                id="gui.extension.gdxtmp.connectingMessage"
             />
         ),
         helpLink: 'https://scratch.mit.edu/vernier'
